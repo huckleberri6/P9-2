@@ -12,9 +12,34 @@ bool hasDuplicates(int values[], int size);
 
 int main()
 {
-	int values[SIZE] = {6, 1, 4, 3, 2, 1};
-	bool b = hasDuplicates(values, SIZE);
-	cout << b;
+	int values[SIZE];
+	for (int i = 0; i < 6; i++)
+	{
+		int input;
+		cout << "Enter integer #" << i << ": ";
+		cin >> input;
+		values[i] = input;
+	}
+	
+	if (isSortedIncreasing(values, SIZE))
+		cout << "The data are increasing." << endl;
+	else
+		cout << "The data are not increasing." << endl;
+
+	if (isSortedDecreasing(values, SIZE))
+		cout << "The data are decreasing." << endl;
+	else
+		cout << "The data are not decreasing." << endl;
+
+	if (hasAdjacentDuplicates(values, SIZE))
+		cout << "The data has adjacent duplicates." << endl;
+	else
+		cout << "The data does not have adjacent duplicates." << endl;
+
+	if (hasDuplicates(values, SIZE))
+		cout << "The data has duplicates." << endl;
+	else
+		cout << "The data does not have duplicates." << endl;
 }
 
 bool isSortedIncreasing(int values[], int size) 
