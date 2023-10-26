@@ -8,11 +8,12 @@ const int SIZE = 6;
 bool isSortedIncreasing(int values[], int size);
 bool isSortedDecreasing(int values[], int size);
 bool hasAdjacentDuplicates(int values[], int size);
+bool hasDuplicates(int values[], int size);
 
 int main()
 {
-	int values[SIZE] = {6, 5, 4, 3, 2, 2};
-	bool b = hasAdjacentDuplicates(values, SIZE);
+	int values[SIZE] = {6, 1, 4, 3, 2, 1};
+	bool b = hasDuplicates(values, SIZE);
 	cout << b;
 }
 
@@ -42,6 +43,19 @@ bool hasAdjacentDuplicates(int values[], int size)
 	{
 		if (values[i] == values[i + 1])
 			return true;
+	}
+	return false;
+}
+
+bool hasDuplicates(int values[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = i + 1; j < size; j++)
+		{
+			if (values[i] == values[j])
+				return true;
+		}
 	}
 	return false;
 }
